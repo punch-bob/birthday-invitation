@@ -1,5 +1,10 @@
 import { useState, useEffect, type FC } from 'react';
-import { intervalToDuration } from 'date-fns';
+import {
+  differenceInDays,
+  differenceInHours,
+  differenceInMinutes,
+  differenceInSeconds,
+} from 'date-fns';
 
 import useStyles from './Countdown.styles';
 import clsx from 'clsx';
@@ -9,11 +14,7 @@ type WordCases = [string, string, string];
 const secretBanner =
   'Ваш звёздный момент начинается здесь...\nПод стулом вас ждёт небольшой сюрприз — часть сценария сегодняшнего вечера.\nОткройте его!';
 
-const targetDate = new Date();
-// targetDate.setDate(targetDate.getDate() + 58);
-// targetDate.setHours(targetDate.getHours() + 15);
-// targetDate.setMinutes(targetDate.getMinutes() + 26);
-targetDate.setSeconds(targetDate.getSeconds() + 5);
+const targetDate = new Date(2025, 10, 15, 17, 0, 0);
 
 export const Countdown: FC = () => {
   const classes = useStyles();
@@ -29,30 +30,30 @@ export const Countdown: FC = () => {
 
   // Функция форматирования продолжительности
   const formatDuration = (startDate: Date, endDate: Date): string => {
-    const duration = intervalToDuration({
-      start: startDate,
-      end: endDate,
-    });
+    const totalDays = Math.max(0, differenceInDays(endDate, startDate));
+    const remainingHours = Math.max(0, differenceInHours(endDate, startDate) % 24);
+    const remainingMinutes = Math.max(0, differenceInMinutes(endDate, startDate) % 60);
+    const remainingSeconds = Math.max(0, differenceInSeconds(endDate, startDate) % 60);
 
     const parts: string[] = [];
 
-    if (duration.days && duration.days > 0) {
-      parts.push(`${duration.days} ${declension(duration.days, ['день', 'дня', 'дней'])}`);
+    if (totalDays > 0) {
+      parts.push(`${totalDays} ${declension(totalDays, ['день', 'дня', 'дней'])}`);
     }
 
-    if (duration.hours && duration.hours > 0) {
-      parts.push(`${duration.hours} ${declension(duration.hours, ['час', 'часа', 'часов'])}`);
+    if (remainingHours > 0) {
+      parts.push(`${remainingHours} ${declension(remainingHours, ['час', 'часа', 'часов'])}`);
     }
 
-    if (duration.minutes && duration.minutes > 0) {
+    if (remainingMinutes > 0) {
       parts.push(
-        `${duration.minutes} ${declension(duration.minutes, ['минута', 'минуты', 'минут'])}`,
+        `${remainingMinutes} ${declension(remainingMinutes, ['минута', 'минуты', 'минут'])}`,
       );
     }
 
-    if (!duration.minutes && duration.seconds && duration.seconds > 0) {
+    if (remainingMinutes <= 0 && remainingSeconds > 0) {
       parts.push(
-        `${duration.seconds} ${declension(duration.seconds, ['секунда', 'секунды', 'секунд'])}`,
+        `${remainingSeconds} ${declension(remainingSeconds, ['секунда', 'секунды', 'секунд'])}`,
       );
     }
 

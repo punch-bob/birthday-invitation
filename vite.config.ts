@@ -14,4 +14,5 @@ export default defineConfig((data) => ({
   server: {
     port: 9090,
   },
+  base: '/birthday-invitation',
 }));
