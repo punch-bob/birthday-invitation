@@ -1,0 +1,29 @@
+<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_283)">
+<g filter="url(#filter0_n_6_283)">
+<path d="M6.37496 4.24999L4.67496 1.98332C4.46246 1.69999 3.96663 1.41666 3.54163 1.41666H1.41663M12.75 4.24999L7.79163 9.91666L2.83329 4.24999H12.75Z" stroke="#2C2C2C" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M10.9083 6.44583C11.3979 6.8645 12.0155 7.10381 12.6594 7.12431C13.3033 7.14481 13.935 6.94528 14.4502 6.55861C14.9655 6.17194 15.3336 5.62123 15.4939 4.99727C15.6541 4.37331 15.597 3.71337 15.3318 3.12625C15.0667 2.53914 14.6094 2.05991 14.0353 1.76758C13.4612 1.47526 12.8047 1.38729 12.1739 1.51818C11.5431 1.64908 10.9758 1.99102 10.5654 2.48763C10.1551 2.98424 9.92623 3.60586 9.91659 4.25M7.79159 9.91667V15.5833M4.95825 15.5833H10.6249" stroke="#2C2C2C" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_n_6_283" x="0.916626" y="0.916656" width="15.1663" height="15.1667" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feTurbulence type="fractalNoise" baseFrequency="1.4285714626312256 1.4285714626312256" stitchTiles="stitch" numOctaves="3" result="noise" seed="748" />
+<feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise" />
+<feComponentTransfer in="alphaNoise" result="coloredNoise1">
+<feFuncA type="discrete" tableValues="0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "/>
+</feComponentTransfer>
+<feComposite operator="in" in2="shape" in="coloredNoise1" result="noise1Clipped" />
+<feFlood flood-color="#D9D9D9" result="color1Flood" />
+<feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1" />
+<feMerge result="effect1_noise_6_283">
+<feMergeNode in="shape" />
+<feMergeNode in="color1" />
+</feMerge>
+</filter>
+<clipPath id="clip0_6_283">
+<rect width="17" height="17" fill="white"/>
+</clipPath>
+</defs>
+</svg>
