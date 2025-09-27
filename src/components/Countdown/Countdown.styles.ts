@@ -8,6 +8,7 @@ export default createUseStyles({
     display: 'flex',
     flexDirection: 'column',
     gap: 50,
+    height: 300,
   },
 
   bannerWrapper: {

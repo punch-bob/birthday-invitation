@@ -2,7 +2,7 @@ import { createUseStyles } from 'react-jss';
 
 export default createUseStyles({
   mainPage: {
-    height: '100%',
+    minHeight: '100%',
     maxWidth: 400,
     position: 'relative',
     margin: 'auto',
@@ -11,6 +11,9 @@ export default createUseStyles({
   },
 
   leftBorder: {
+    maxHeight: '100%',
+    height: '100%',
+    overflow: 'hidden',
     width: 'fit-content',
     position: 'absolute',
     top: 0,
@@ -18,6 +21,9 @@ export default createUseStyles({
   },
 
   rightBorder: {
+    maxHeight: '100%',
+    height: '100%',
+    overflow: 'hidden',
     width: 'fit-content',
     position: 'absolute',
     top: 0,
