@@ -45,7 +45,7 @@ export default createUseStyles({
   },
 
   disabled: {
-    color: '#a44444ff',
-    borderColor: '#a44444ff',
+    color: '#505f79',
+    borderColor: '#505f79',
   },
 });
