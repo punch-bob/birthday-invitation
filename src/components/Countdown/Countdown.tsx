@@ -11,7 +11,7 @@ import { Announcement } from '../Announcement';
 
 type WordCases = [string, string, string];
 
-const targetDate = new Date(2025, 12, 28, 15, 0, 0);
+const targetDate = new Date(2025, 11, 28, 15, 0, 0);
 // const targetDate = new Date(Date.now() + 5000);
 
 export const Countdown: FC = () => {

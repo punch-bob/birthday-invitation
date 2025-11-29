@@ -1,4 +1,4 @@
-const FORM_ANSWER = 'formAnswer';
+const FORM_ANSWER = 'mafiaFormAnswer';
 
 export const getFormAnswer = () => localStorage.getItem(FORM_ANSWER);
 

@@ -14,7 +14,7 @@ export const Ideas: FC = () => {
           {`Есть желание «выступить»?\n(песня, танец...)\nСвяжитесь с нашим Смотрящим.\n\nВладислав 8(913)387-85-79`}
         </span>
       </Announcement>
-      <img src={Dance} width={132} height={179} className={classes.dance} />
+      <img src={Dance} width={100} height={135} className={classes.dance} />
     </div>
   );
 };
