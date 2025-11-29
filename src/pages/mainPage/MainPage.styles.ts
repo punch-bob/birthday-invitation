@@ -10,32 +10,11 @@ export default createUseStyles({
     left: 0,
   },
 
-  leftBorder: {
-    maxHeight: '100%',
-    height: '100%',
-    overflow: 'hidden',
-    width: 'fit-content',
-    position: 'absolute',
-    top: 0,
-    left: 0,
-  },
-
-  rightBorder: {
-    maxHeight: '100%',
-    height: '100%',
-    overflow: 'hidden',
-    width: 'fit-content',
-    position: 'absolute',
-    top: 0,
-    right: 0,
-  },
-
   mainPageInner: {
-    marginInline: 63,
-    paddingBlock: 50,
+    paddingBlock: 96,
 
     display: 'flex',
     flexDirection: 'column',
-    gap: 50,
+    gap: 20,
   },
 });

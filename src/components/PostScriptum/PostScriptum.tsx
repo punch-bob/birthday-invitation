@@ -1,20 +1,24 @@
 import { type FC } from 'react';
 
 import useStyles from './PostScriptum.styles';
+import { Announcement } from '../Announcement';
 
 export const PostScriptum: FC = () => {
   const classes = useStyles();
 
   return (
     <div className={classes.postScriptum}>
-      <div>
-        <div className={classes.lightText}>Сообщите, пожалуйста, о своем присутствии до</div>
-        <div className={classes.boldText}>1 ноября 2025 года</div>
-      </div>
-
-      <div className={classes.boldText}>
-        Не пропустите этот вечер — он станет настоящим событием года!
-      </div>
+      <Announcement>
+        <span className={classes.text}>
+          {`Чтобы всё было чисто,\nнам нужна явка всех своих.\nПодтверди участие до 15 декабря!\nНеявка без уважительной причины карается увесистой\nпачкой денег...\nкоторые ты\nподаришь имениннику!`}
+        </span>
+        <img
+          src="/birthday-invitation/src/components/assets/img/money.png"
+          width={97}
+          height={53}
+          className={classes.money}
+        />
+      </Announcement>
     </div>
   );
 };

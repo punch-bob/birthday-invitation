@@ -2,26 +2,24 @@ import { createUseStyles } from 'react-jss';
 
 export default createUseStyles({
   ideas: {
-    display: 'flex',
-    flexDirection: 'column',
-  },
-
-  title: {
-    fontSize: 15,
-    textAlign: 'center',
-    marginBottom: 20,
+    position: 'relative',
+    justifySelf: 'center',
+    marginTop: 60,
+    marginLeft: 20,
   },
 
   info: {
-    fontFamily: 'Sansation',
-    fontWeight: 300,
-    fontStyle: 'normal',
-    fontSize: 15,
-    marginBottom: 10,
+    fontWeight: 700,
+    fontSize: 18,
+    whiteSpace: 'pre-wrap',
+    textAlign: 'center',
+    color: '#6C0606',
   },
 
-  contact: {
-    fontSize: 15,
-    textAlign: 'center',
+  dance: {
+    position: 'absolute',
+    zIndex: 10,
+    top: -70,
+    right: 0,
   },
 });

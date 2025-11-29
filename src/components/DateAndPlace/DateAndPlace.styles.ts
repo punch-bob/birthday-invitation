@@ -1,30 +1,33 @@
 import { createUseStyles } from 'react-jss';
 
 export default createUseStyles({
+  dateAndPlaceWrapper: {
+    marginTop: 20,
+    display: 'flex',
+    justifyContent: 'center',
+    color: '#6C0606',
+  },
+
   dateAndPlace: {
     display: 'flex',
     flexDirection: 'column',
-    gap: 20,
+    width: '100%',
+    gap: 10,
   },
 
-  date: {
-    display: 'flex',
-    gap: 25,
+  text: {
+    fontSize: 20,
+    fontWeight: 500,
+    whiteSpace: 'pre-wrap',
   },
 
-  place: {
-    display: 'flex',
-    gap: 15,
+  bold: {
+    extend: 'text',
+    fontWeight: 700,
   },
 
-  paragraphTitle: {
-    fontSize: 15,
-  },
-
-  paragraphInfo: {
-    fontFamily: 'Sansation',
-    fontWeight: 300,
-    fontStyle: 'normal',
-    fontSize: 17,
+  rightAlign: {
+    width: '100%',
+    textAlign: 'right',
   },
 });

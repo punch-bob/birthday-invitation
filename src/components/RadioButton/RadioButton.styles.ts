@@ -5,15 +5,15 @@ export default createUseStyles({
     appearance: 'none',
     cursor: 'pointer',
     borderRadius: '50%',
-    minWidth: 18,
-    minHeight: 18,
+    minWidth: 20,
+    minHeight: 20,
     outline: 'none',
     transition: '0.1s all ease-in-out',
     margin: 0,
-    border: [3, 'solid', '#2c2c2c'],
+    border: [4, 'solid', '#680D0D'],
 
     '&:checked': {
-      border: [5, 'solid', '#9F0001'],
+      border: [10, 'solid', '#680D0D'],
     },
   },
 
@@ -21,7 +21,7 @@ export default createUseStyles({
     display: 'flex',
     alignItems: 'center',
     cursor: 'pointer',
-    paddingBlock: 5,
+    paddingBlock: 2,
   },
 
   isDisabled: {
@@ -29,10 +29,9 @@ export default createUseStyles({
   },
 
   content: {
-    fontFamily: 'Sansation',
-    fontWeight: 300,
-    fontStyle: 'normal',
-    fontSize: 15,
-    marginLeft: 15,
+    fontWeight: 500,
+    fontSize: 14,
+    color: '#6C0606',
+    marginLeft: 12,
   },
 });

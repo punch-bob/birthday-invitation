@@ -1,23 +1,24 @@
 import { type FC } from 'react';
 
 import useStyles from './Ideas.styles';
+import { Announcement } from '../Announcement';
 
 export const Ideas: FC = () => {
   const classes = useStyles();
 
   return (
     <div className={classes.ideas}>
-      <span className={classes.title}>Есть идеи?</span>
-
-      <span className={classes.info}>
-        Если у вас интерактивное поздравление или выступление (песня, танец, постановка и т.д.),
-        сообщите, пожалуйста, об этом заранее ведущему:
-      </span>
-
-      <div className={classes.contact}>
-        <div>Владислав</div>
-        <div>8 (913) 387-85-79</div>
-      </div>
+      <Announcement width={298} rotateDeg={-13}>
+        <span className={classes.info}>
+          {`Есть желание «выступить»?\n(песня, танец...)\nСвяжитесь с нашим Смотрящим.\n\nВладислав 8(913)387-85-79`}
+        </span>
+      </Announcement>
+      <img
+        src="/birthday-invitation/src/components/assets/img/dance.png"
+        width={132}
+        height={179}
+        className={classes.dance}
+      />
     </div>
   );
 };

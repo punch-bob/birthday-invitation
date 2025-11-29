@@ -1,62 +1,97 @@
 import { createUseStyles } from 'react-jss';
 
 export default createUseStyles({
-  programList: {
+  lists: {
     display: 'flex',
     flexDirection: 'column',
-    gap: 25,
-  },
-
-  title: {
-    fontSize: 15,
-    textAlign: 'center',
-  },
-
-  mainList: {
-    display: 'flex',
-    flexDirection: 'column',
+    alignItems: 'center',
     gap: 20,
   },
 
-  circle: {
+  programList: {
+    width: '100%',
+    height: '100%',
     display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: '50%',
+    flexDirection: 'column',
   },
 
-  mainCircle: {
-    extend: 'circle',
-    color: '#9F0001',
-    fontFamily: 'Rubik Dirt',
-    fontWeight: 400,
-    fontStyle: 'normal',
-    fontSize: 20,
-    border: [3, 'solid', '#9F0001'],
-    padding: [3, 9],
-  },
-
-  secondaryCircle: {
-    minWidth: 25,
-    height: 25,
-    extend: 'circle',
-    border: [1, 'solid', '#2c2c2c'],
-  },
-
-  listItem: {
-    display: 'flex',
-    gap: 15,
-    alignItems: 'center',
-
-    fontFamily: 'Sansation',
-    fontWeight: 300,
-    fontStyle: 'normal',
-    fontSize: 15,
-  },
-
-  secondaryItem: {
-    extend: 'listItem',
-    marginLeft: 20,
+  title: {
+    fontSize: 16,
+    fontWeight: 840,
+    textAlign: 'center',
     whiteSpace: 'pre-wrap',
+    color: '#6C0606',
+  },
+
+  time: {
+    fontSize: 19,
+    fontWeight: 840,
+    color: '#6C0606',
+  },
+
+  floatLeft: {
+    float: 'left',
+    margin: [10, 10, 0, 0],
+  },
+
+  item: {
+    width: 'fit-content',
+  },
+
+  itemText: {
+    fontSize: 17,
+    fontWeight: 500,
+    color: '#6C0606',
+  },
+
+  programListWrapper: {
+    width: 280,
+  },
+
+  announcementInner: {
+    position: 'relative',
+    width: '100%',
+    height: '100%',
+  },
+
+  cards: {
+    position: 'absolute',
+    top: 50,
+    left: 265,
+    transform: 'rotate(72deg) scaleX(-1)',
+  },
+
+  guitar: {
+    top: 125,
+    left: 235,
+    position: 'absolute',
+  },
+
+  accordion: {
+    position: 'absolute',
+    top: 170,
+    left: 150,
+    transform: 'rotate(6deg)',
+  },
+
+  fortuneWheel: {
+    position: 'absolute',
+    top: 30,
+    left: 230,
+    transform: 'rotate(-12deg)',
+  },
+
+  cake: {
+    position: 'absolute',
+    top: 105,
+    left: 155,
+    transform: 'rotate(14deg)',
+  },
+
+  fortuneWheelAnnouncement: {
+    position: 'absolute',
+    left: 15,
+    width: 220,
+    display: 'flex',
   },
 });

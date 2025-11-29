@@ -7,20 +7,17 @@ import {
 } from 'date-fns';
 
 import useStyles from './Countdown.styles';
-import clsx from 'clsx';
+import { Announcement } from '../Announcement';
 
 type WordCases = [string, string, string];
 
-const secretBanner =
-  'Ваш звёздный момент начинается здесь...\nПод стулом вас ждёт небольшой сюрприз — часть сценария сегодняшнего вечера.\nОткройте его!';
-
-const targetDate = new Date(2025, 10, 15, 17, 0, 0);
+const targetDate = new Date(2025, 12, 28, 15, 0, 0);
+// const targetDate = new Date(Date.now() + 5000);
 
 export const Countdown: FC = () => {
   const classes = useStyles();
 
   const [timeLeft, setTimeLeft] = useState('');
-  const [shouldShowBanner, setShouldShowBanner] = useState(false);
 
   // Функция для склонения слов
   const declension = (number: number, words: WordCases): string => {
@@ -69,11 +66,6 @@ export const Countdown: FC = () => {
       const now = new Date();
       const target = new Date(targetDate);
 
-      if (now >= target) {
-        setShouldShowBanner(true);
-        return;
-      }
-
       setTimeLeft(formatDuration(now, target));
     };
 
@@ -87,21 +79,15 @@ export const Countdown: FC = () => {
 
   return (
     <div className={classes.countdown}>
-      <div className={classes.bannerWrapper}>
-        <div className={clsx(classes.secretBanner, { [classes.timerFinished]: shouldShowBanner })}>
-          {secretBanner}
+      <Announcement>
+        <div className={classes.inner}>
+          <span className={classes.text}>
+            Не пропусти это событие, оно...войдет в историю нашей банды.
+          </span>
+          <div className={classes.title}>До события осталось:</div>
+          <div className={classes.title}>{timeLeft}</div>
         </div>
-
-        <div className={clsx(classes.banner, { [classes.timerFinished]: shouldShowBanner })}>
-          Совершенно секретно!
-        </div>
-      </div>
-      {!shouldShowBanner && (
-        <div className={classes.timerWrapper}>
-          <div className={classes.timerTitle}>До события осталось:</div>
-          <div className={classes.timer}>{timeLeft}</div>
-        </div>
-      )}
+      </Announcement>
     </div>
   );
 };

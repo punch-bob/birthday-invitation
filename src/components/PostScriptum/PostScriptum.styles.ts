@@ -2,21 +2,22 @@ import { createUseStyles } from 'react-jss';
 
 export default createUseStyles({
   postScriptum: {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: 50,
-    alignItems: 'center',
+    alignSelf: 'center',
+  },
+
+  text: {
+    fontSize: 20,
+    fontWeight: 700,
     textAlign: 'center',
+    whiteSpace: 'pre-wrap',
+    color: '#680D0D',
+    lineHeight: '24px',
   },
 
-  lightText: {
-    fontFamily: 'Sansation',
-    fontWeight: 300,
-    fontStyle: 'normal',
-    fontSize: 20,
-  },
-
-  boldText: {
-    fontSize: 20,
+  money: {
+    position: 'absolute',
+    top: 155,
+    left: 10,
+    transform: 'rotate(6deg)',
   },
 });

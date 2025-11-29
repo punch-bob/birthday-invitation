@@ -1,6 +1,5 @@
 import { Fragment, type FC } from 'react';
 import useStyles from './MainPage.styles';
-import { FilmBorder } from '@/components/FilmBorder';
 import { Header } from '@/components/Header';
 import { DateAndPlace } from '@/components/DateAndPlace';
 import { ProgramList } from '@/components/ProgramList';
@@ -35,12 +34,6 @@ export const MainPage: FC = () => {
       </Helmet>
 
       <div className={classes.mainPage}>
-        <div className={classes.leftBorder}>
-          <FilmBorder />
-        </div>
-        <div className={classes.rightBorder}>
-          <FilmBorder />
-        </div>
         <div className={classes.mainPageInner}>
           <Header />
 
@@ -50,9 +43,9 @@ export const MainPage: FC = () => {
 
           <DressCode />
 
-          <Ideas />
-
           <Drinks />
+
+          <Ideas />
 
           <PostScriptum />
 

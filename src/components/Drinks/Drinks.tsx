@@ -5,8 +5,33 @@ import useStyles from './Drinks.styles';
 import { RadioButton, type RadioButtonProps } from '../RadioButton';
 import { getFormAnswer, setFormAnswer } from './utils';
 import clsx from 'clsx';
+import { Announcement } from '../Announcement';
 
 const groupName = 'drink-form';
+
+interface IListItem {
+  label: string;
+  currentMessage: string;
+  onChange: RadioButtonProps['onChange'];
+}
+
+const ListItem: FC<IListItem> = ({ label, currentMessage, onChange }) => (
+  <RadioButton
+    label={label}
+    name={groupName}
+    value={label}
+    isChecked={currentMessage === label}
+    onChange={onChange}
+  />
+);
+
+const allItems1 = ['водка', 'коньяк', 'самогон', 'шампанское'];
+const allItems2 = [
+  'вино сухое красное',
+  'вино сухое белое',
+  'вино полусладкое',
+  'безалкогольные напитки',
+];
 
 export const Drinks: FC = () => {
   const classes = useStyles();
@@ -22,7 +47,7 @@ export const Drinks: FC = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (formAnswer !== null || isLoading) {
+    if (formAnswer !== null || isLoading || formData.message === '') {
       return;
     }
 
@@ -48,68 +73,52 @@ export const Drinks: FC = () => {
 
   return (
     <div className={classes.drinks}>
-      <span className={classes.title}>Что пьем?</span>
+      <Announcement>
+        <div className={classes.drinksInner}>
+          <span className={classes.title}>
+            {`Чем будем скреплять тосты?\nТолько один вариант признается “правильным”`}
+          </span>
+          <form onSubmit={handleSubmit}>
+            <div className={classes.list1}>
+              {allItems1.map((label) => (
+                <ListItem
+                  key={label}
+                  label={label}
+                  currentMessage={formData.message}
+                  onChange={handleChange}
+                />
+              ))}
+            </div>
 
-      <div className={classes.info}>Отметьте, пожалуйста, что из напитков вы предпочитаете:</div>
+            <div className={classes.list2Wrapper}>
+              <img
+                src="/birthday-invitation/src/components/assets/img/drinks.png"
+                width={121}
+                height={126}
+              />
 
-      <form className={classes.form} onSubmit={handleSubmit}>
-        <RadioButton
-          label="Водка"
-          name={groupName}
-          value="Водка"
-          isChecked={formData.message === 'Водка'}
-          onChange={handleChange}
-        />
-        <RadioButton
-          label="Коньяк"
-          name={groupName}
-          value="Коньяк"
-          isChecked={formData.message === 'Коньяк'}
-          onChange={handleChange}
-        />
-        <RadioButton
-          label="Продукт домашнего приготовления"
-          name={groupName}
-          value="Продукт домашнего приготовления"
-          isChecked={formData.message === 'Продукт домашнего приготовления'}
-          onChange={handleChange}
-        />
-        <RadioButton
-          label="Вино сухое"
-          name={groupName}
-          value="Вино сухое"
-          isChecked={formData.message === 'Вино сухое'}
-          onChange={handleChange}
-        />
-        <RadioButton
-          label="Вино полусладкое"
-          name={groupName}
-          value="Вино полусладкое"
-          isChecked={formData.message === 'Вино полусладкое'}
-          onChange={handleChange}
-        />
-        <RadioButton
-          label="Шампанское"
-          name={groupName}
-          value="Шампанское"
-          isChecked={formData.message === 'Шампанское'}
-          onChange={handleChange}
-        />
-        <RadioButton
-          label="Безалкогольные напитки"
-          name={groupName}
-          value="Безалкогольные напитки"
-          isChecked={formData.message === 'Безалкогольные напитки'}
-          onChange={handleChange}
-        />
-
-        <button
-          type="submit"
-          className={clsx(classes.button, { [classes.disabled]: formAnswer !== null || isLoading })}
-        >
-          Ответить
-        </button>
-      </form>
+              <div className={classes.list2}>
+                {allItems2.map((label) => (
+                  <ListItem
+                    key={label}
+                    label={label}
+                    currentMessage={formData.message}
+                    onChange={handleChange}
+                  />
+                ))}
+                <button
+                  type="submit"
+                  className={clsx(classes.button, {
+                    [classes.disabled]: formAnswer !== null || isLoading,
+                  })}
+                >
+                  {formAnswer === null ? 'Ответить' : 'Ваш ответ принят'}
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </Announcement>
     </div>
   );
 };
