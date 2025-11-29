@@ -2,6 +2,7 @@ import { type ReactNode, type FC } from 'react';
 
 import useStyles from './ProgramList.styles';
 import { Announcement } from '../Announcement';
+import { Accordion, Cake, Cards, FortuneWheel, Guitar, Pistol } from '../assets/img';
 
 interface IListItem {
   children: ReactNode;
@@ -11,12 +12,7 @@ const ListItem: FC<IListItem> = ({ children }) => {
 
   return (
     <div className={classes.item}>
-      <img
-        src="/birthday-invitation/src/components/assets/img/pistol.png"
-        width={37}
-        height={22}
-        className={classes.floatLeft}
-      />
+      <img src={Pistol} width={37} height={22} className={classes.floatLeft} />
       <span className={classes.itemText}>{children}</span>
     </div>
   );
@@ -47,24 +43,9 @@ export const ProgramList: FC = () => {
               <ListItem>Обеспечим высшей категории угощениями и напитками</ListItem>
             </div>
           </div>
-          <img
-            src="/birthday-invitation/src/components/assets/img/cards.png"
-            width={100}
-            height={65}
-            className={classes.cards}
-          />
-          <img
-            src="/birthday-invitation/src/components/assets/img/guitar.png"
-            width={115}
-            height={98}
-            className={classes.guitar}
-          />
-          <img
-            src="/birthday-invitation/src/components/assets/img/accordion.png"
-            width={66}
-            height={51}
-            className={classes.accordion}
-          />
+          <img src={Cards} width={100} height={65} className={classes.cards} />
+          <img src={Guitar} width={115} height={98} className={classes.guitar} />
+          <img src={Accordion} width={66} height={51} className={classes.accordion} />
         </div>
       </Announcement>
 
@@ -78,12 +59,7 @@ export const ProgramList: FC = () => {
               </ListItem>
             </div>
           </div>
-          <img
-            src="/birthday-invitation/src/components/assets/img/fortune-wheel.png"
-            width={115}
-            height={115}
-            className={classes.fortuneWheel}
-          />
+          <img src={FortuneWheel} width={115} height={115} className={classes.fortuneWheel} />
         </Announcement>
       </div>
 
@@ -96,12 +72,7 @@ export const ProgramList: FC = () => {
               </ListItem>
             </div>
           </div>
-          <img
-            src="/birthday-invitation/src/components/assets/img/cake.png"
-            width={139}
-            height={92}
-            className={classes.cake}
-          />
+          <img src={Cake} width={139} height={92} className={classes.cake} />
         </Announcement>
       </div>
     </div>

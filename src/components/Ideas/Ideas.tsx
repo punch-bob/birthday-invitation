@@ -2,6 +2,7 @@ import { type FC } from 'react';
 
 import useStyles from './Ideas.styles';
 import { Announcement } from '../Announcement';
+import { Dance } from '../assets/img';
 
 export const Ideas: FC = () => {
   const classes = useStyles();
@@ -13,12 +14,7 @@ export const Ideas: FC = () => {
           {`Есть желание «выступить»?\n(песня, танец...)\nСвяжитесь с нашим Смотрящим.\n\nВладислав 8(913)387-85-79`}
         </span>
       </Announcement>
-      <img
-        src="/birthday-invitation/src/components/assets/img/dance.png"
-        width={132}
-        height={179}
-        className={classes.dance}
-      />
+      <img src={Dance} width={132} height={179} className={classes.dance} />
     </div>
   );
 };

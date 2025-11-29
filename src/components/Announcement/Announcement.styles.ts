@@ -1,6 +1,5 @@
 import { createUseStyles } from 'react-jss';
-
-const url = '/birthday-invitation/src/components/assets/img/announcement.png';
+import announcement from '../assets/img/announcement.png';
 
 export default createUseStyles({
   announcement: {
@@ -9,7 +8,7 @@ export default createUseStyles({
     alignItems: 'center',
     justifyContent: 'center',
     padding: 10,
-    backgroundImage: `url("${url}")`,
+    backgroundImage: `url("${announcement}")`,
     backgroundPosition: 'top center',
     backgroundSize: 'contain',
   },

@@ -2,6 +2,7 @@ import { type FC } from 'react';
 
 import useStyles from './DressCode.styles';
 import { Announcement } from '../Announcement';
+import { Gentleman, Gentleman2, GentlemanAndLady, Lady, Lady2, Police } from '../assets/img';
 
 export const DressCode: FC = () => {
   const classes = useStyles();
@@ -23,21 +24,11 @@ export const DressCode: FC = () => {
             запонки, пистолет, сигара
           </span>
         </Announcement>
-        <img
-          src="/birthday-invitation/src/components/assets/img/gentleman.png"
-          width={96}
-          height={193}
-          className={classes.gentleman}
-        />
+        <img src={Gentleman} width={96} height={193} className={classes.gentleman} />
       </div>
 
       <div style={{ height: 180 }} className={classes.wrapper}>
-        <img
-          src="/birthday-invitation/src/components/assets/img/lady.png"
-          width={119}
-          height={205}
-          className={classes.lady}
-        />
+        <img src={Lady} width={119} height={205} className={classes.lady} />
         <div className={classes.ladyAnnouncement}>
           <Announcement width={253} rotateDeg={14}>
             <span className={classes.text}>
@@ -51,21 +42,9 @@ export const DressCode: FC = () => {
 
       <Announcement>
         <div className={classes.manyPeoples}>
-          <img
-            src="/birthday-invitation/src/components/assets/img/gentleman-and-lady.png"
-            width={171}
-            height={194}
-          />
-          <img
-            src="/birthday-invitation/src/components/assets/img/gentleman-2.png"
-            width={90}
-            height={175}
-          />
-          <img
-            src="/birthday-invitation/src/components/assets/img/lady-2.png"
-            width={82}
-            height={172}
-          />
+          <img src={GentlemanAndLady} width={171} height={194} />
+          <img src={Gentleman2} width={90} height={175} />
+          <img src={Lady2} width={82} height={172} />
         </div>
       </Announcement>
 
@@ -75,12 +54,7 @@ export const DressCode: FC = () => {
             Полиция моды будет бдительна!!! Явка в несоответствующей одежде может караться штрафным
             бокалом итальянской граппы!
           </div>
-          <img
-            src="/birthday-invitation/src/components/assets/img/police.png"
-            width={134}
-            height={196}
-            className={classes.police}
-          />
+          <img src={Police} width={134} height={196} className={classes.police} />
         </div>
       </Announcement>
     </div>

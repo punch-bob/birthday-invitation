@@ -2,6 +2,7 @@ import { type FC } from 'react';
 
 import useStyles from './PostScriptum.styles';
 import { Announcement } from '../Announcement';
+import { Money } from '../assets/img';
 
 export const PostScriptum: FC = () => {
   const classes = useStyles();
@@ -12,12 +13,7 @@ export const PostScriptum: FC = () => {
         <span className={classes.text}>
           {`Чтобы всё было чисто,\nнам нужна явка всех своих.\nПодтверди участие до 15 декабря!\nНеявка без уважительной причины карается увесистой\nпачкой денег...\nкоторые ты\nподаришь имениннику!`}
         </span>
-        <img
-          src="/birthday-invitation/src/components/assets/img/money.png"
-          width={97}
-          height={53}
-          className={classes.money}
-        />
+        <img src={Money} width={97} height={53} className={classes.money} />
       </Announcement>
     </div>
   );

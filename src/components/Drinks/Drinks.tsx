@@ -6,6 +6,7 @@ import { RadioButton, type RadioButtonProps } from '../RadioButton';
 import { getFormAnswer, setFormAnswer } from './utils';
 import clsx from 'clsx';
 import { Announcement } from '../Announcement';
+import { Drinks as DrinksPNG } from '../assets/img';
 
 const groupName = 'drink-form';
 
@@ -91,11 +92,7 @@ export const Drinks: FC = () => {
             </div>
 
             <div className={classes.list2Wrapper}>
-              <img
-                src="/birthday-invitation/src/components/assets/img/drinks.png"
-                width={121}
-                height={126}
-              />
+              <img src={DrinksPNG} width={121} height={126} />
 
               <div className={classes.list2}>
                 {allItems2.map((label) => (
